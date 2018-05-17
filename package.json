@@ -1,0 +1,42 @@
+{
+    "name": "webpack-react",
+    "version": "1.0.0",
+    "description": "webpack to react",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "scripts": {
+        "clear": "rimraf dist",
+        "build:client": "webpack --mode=production --config build/webpack.config.client.js",
+        "build:server": "webpack --mode=production --config build/webpack.config.server.js",
+        "build": "npm run clear && npm run build:client && npm run build:server",
+        "start": "node server/server.js",
+        "dev:client": "cross-env ENV_TYPE=development webpack-dev-server --mode=development --config build/webpack.config.client.js",
+        "dev:server": "cross-env ENV_TYPE=development node server/server.js"
+    },
+    "author": "caitianxu",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.18.0",
+        "express": "^4.16.3",
+        "react": "^16.3.2",
+        "react-dom": "^16.3.2"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-loader": "^7.1.4",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-es2015-loose": "^8.0.0",
+        "babel-preset-react": "^6.24.1",
+        "cross-env": "^5.1.5",
+        "html-webpack-plugin": "^3.2.0",
+        "memory-fs": "^0.4.1",
+        "react-hot-loader": "^4.2.0",
+        "rimraf": "^2.6.2",
+        "webpack": "^4.8.3",
+        "webpack-cli": "^2.1.3",
+        "webpack-dev-server": "^3.1.4"
+    }
+}
